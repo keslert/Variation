@@ -1,0 +1,277 @@
+.plugins-menu {
+  position: absolute;
+  top: $toolbar-height;
+  bottom: 0;
+  right: 0;
+  width: $plugin-menu-width;
+  border-left: 1px solid $gray;
+  background: $lighter-gray;
+  overflow-y: auto;
+  font-size: 13px;
+
+  .plugin-btns {
+    display: flex;
+  }
+
+
+  .header {
+    padding: 4px 4px;
+    background: $lighter-gray;
+    display: flex;
+    align-items: center;
+    .name {
+      flex: 1;
+    }
+
+    &.plugins-header {
+      font-weight: bold;
+      border-bottom: 2px solid $gray;
+    }
+
+    &.plugin-header {
+      background: #fff;
+      cursor: pointer;
+      height: 28px;
+      &:hover {
+        background: $light-gray;
+      }
+      .kt-caret {
+        margin-right: 4px;
+        font-size: 11px;
+      }
+    }
+
+    &.param-header {
+      border-top: 1px solid transparentize($action-color, 0.85);
+      border-bottom: 1px solid transparentize($action-color, 0.85);
+      background: transparentize($action-color, 0.9);
+      color: $action-color;
+      padding: 1px 10px;
+    }
+  }
+
+  .plugin-menu {
+    margin-bottom: 0;
+    border-radius: 0;
+    border: none;
+    position: relative;
+
+    .btn-group {
+      padding: 5px;
+      display: flex;
+      justify-content: center;
+      .btn {
+        background: transparent;
+        border-color: $action-color;
+        color: $action-color;
+        &.active {
+          color: #fff;
+          background: $action-color;
+        }
+      }
+    }
+
+    .param-list {
+      // border-left: 1px solid $action-color;
+      font-size: 12px;
+      .header {
+        border: 1px solid transparentize($action-color, 0.85);
+        border-right: none;
+        border-left: none;
+        background: transparentize($action-color, 0.9);
+        color: $action-color;
+        padding: 1px 8px;
+      }
+      .header + ul {
+        padding: 4px 2px;
+      }
+      .reset-btn {
+        text-align: center;
+        border-top: 1px solid transparentize($red, 0.80);
+        background: transparentize($red, 0.85);
+        color: $red;
+        cursor: pointer;
+        &:hover {
+          background: transparentize($red, 0.88)
+        }
+      }
+      .plugin-param-menu {
+
+        .probability {
+          color: $dark-gray;
+          margin-right: 38px;
+          font-size: 8px;
+          text-align: right;
+        }
+
+        .form-group {
+          margin-bottom: 0;
+          padding: 8px;
+        }
+      }
+
+
+
+      .plugin-param-option {
+        padding: 2px 5px;
+        font-weight: bold;
+        .row {
+          display: flex;
+          margin: 0;
+        }
+
+        .name {
+          flex: 1;
+          text-align: left;
+          position: relative;
+          z-index: 5;
+          margin-right: 3px;
+          span {
+            background: #fff;
+            padding-right: 3px;
+          }
+          &:after {
+            content: ' ';
+            height: 1px;
+            width: 100%;
+            border-bottom:1px dashed #ccc;
+            position: absolute;
+            left: 0;
+            top: 9px;
+            z-index: -1;
+          }
+        }
+
+        .percentage {
+          margin-right: 5px;
+          color: $gray;
+          font-weight: normal;
+        }
+
+        .radio {
+          position: relative;
+          width: 18px;
+          height: 18px;
+          border: 2px solid #eaeaea;
+          border-radius: 50%;
+          margin: 0;
+          cursor: pointer;
+          &.selected:after {
+            content: ' ';
+            width: 75%;
+            height: 75%;
+            background: $action-color;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -37.5%;
+          }
+        }
+
+        .input-range {
+          margin-top: -15px;
+          span {
+            float: right;
+            color: $gray;
+          }
+        }
+
+        .btn-group {
+          padding: 0;
+          float: right;
+          .btn {
+            font-size: 8px;
+            line-height: 14px;
+          }
+        }
+
+        .custom {
+          list-style-type: circle;
+          font-size: 10px;
+          li {
+            margin-top: 2px;
+            margin-left: 5px;
+            display: flex;
+            &:before {
+              content: ' ';
+              height: 4px;
+              width: 4px;
+              border-radius: 2px;
+              background: currentColor;
+              float: left;
+              margin-top: 6px;
+              margin-right: 5px;
+            }
+          }
+
+          .number {
+            input {
+              padding: 0 2px;
+              width: 40px;
+              font-size: inherit;
+              height: 18px;
+              margin: -2px 1px 0 5px;
+            }
+          }
+
+          .element {
+            margin-left: 5px;
+            display: flex;
+          }
+
+          .Select-control {
+            width: 120px;
+            height: 16px;
+            .Select-value {
+              line-height: 16px;
+              padding: 0 5px;
+            }
+            .Select-input {
+              padding: 0 5px;
+              height: 16px;
+              input {
+                height: 16px;
+              }
+            }
+          }
+        }
+      }
+    }
+    a {
+      background: $white;
+      border-left: 1px solid $light-gray;
+      padding: 5px 8px;
+      color: $dark-gray;
+      cursor: pointer;
+      &:hover {
+        background: $light-gray;
+      }
+      &:focus {
+        background: $white;
+      }
+    }
+    .plugin-btns {
+      .plugin-btn {
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        padding: 0;
+        border-radius: 2px;
+        text-align: center;
+        font-size: 12px;
+        cursor: pointer;
+        color: $gray;
+        box-shadow: none;
+        &:hover {
+          background: rgba(0,0,0,0.05);
+          border: 1px solid rgba(0,0,0,0.1);
+          color: darken($gray, 5%);
+        }
+        &.active {
+          color: $dark-gray;
+        }
+      }
+    }
+  }
+}

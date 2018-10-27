@@ -1,0 +1,26 @@
+.switch {
+  margin-top: 1px;
+  width: 28px;
+  height: 16px;
+  border-radius: 8px;
+  border: 1px solid $gray;
+  cursor: pointer;
+  background: $light-gray;
+  &.on {
+    background: $action-color;
+    .switch-toggle {
+      left: 12px;
+    }
+  }
+
+  .switch-toggle {
+    width: 14px;
+    height: 14px;
+    border-radius: 7px;
+    border: 1px solid $gray;
+    background: #fff;
+    left: 0;
+    position: relative;
+    @include transition(left .2s ease-in-out);
+  }
+}

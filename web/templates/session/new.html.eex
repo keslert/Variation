@@ -1,0 +1,30 @@
+
+<div class="ui grid">
+  <div class="centered column small-form">
+    <div class="ui basic segment">
+      <h2 class="ui center aligned icon header">
+        <i class="circular user icon"></i>
+        Login
+      </h2>
+      <%= form_for @conn, session_path(@conn, :create), [as: :session, class: "ui equal width form basic segment"], fn f -> %>
+        <div class="field">
+          <%= text_input f, :username, placeholder: "Username" %>
+        </div>
+        <div class="field">
+          <%= password_input f, :password, placeholder: "Password" %>
+        </div>
+
+        <div class="field">
+          <div class="ui checkbox">
+            <%= checkbox f, :remember, tabindex: 0, class: "hidden" %>
+            <label>Remember me on this device</label>
+          </div>
+        </div>
+
+        <%= submit "Log in", class: "ui primary fluid submit button" %>
+      <% end %>
+
+    </div>
+    <div class="ui hidden divider"></div>
+  </div>
+</div>

@@ -1,0 +1,67 @@
+.toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: $toolbar-height;
+  box-sizing: border-box;
+  border-bottom: 1px solid $gray;
+  background: $lighter-gray;
+  display: flex;
+  align-items: center;
+  padding: 0 5px;
+  .toolbar-item {
+    display:inline-block {}
+    margin-top: 3px;
+    .label {
+      font-size: 12px;
+      color: $dark-gray;
+      i {
+        margin-left: 3px;
+      }
+    }
+    .btn-group {
+      margin-top: -3px;
+      .btn {
+        font-weight: 600;
+        background: $light-gray;
+        border: 1px solid $gray;
+        padding: 3px 8px;
+        box-shadow: none;
+        font-size: 12px;
+        &.active {
+          color: $action-color;
+          &:hover {
+            color: lighten($action-color, 10%);
+          }
+        }
+
+        &:hover {
+          color: lighten($dark-gray, 10%);
+          background: lighten($light-gray, 10%);
+        }
+
+        &.disabled {
+          color: $lighter-gray;
+          &:hover {
+            color: $lighter-gray;
+            background: $light-gray;
+          }
+        }
+      }
+    }
+  }
+  .logo {
+    width: 125px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 1000;
+    text-transform: uppercase;
+    // border-right: 1px solid $gray;
+    color: $dark-gray;
+    &:hover {
+      text-decoration: none;
+      color: lighten($dark-gray, 5%);
+    }
+  }
+}

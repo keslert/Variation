@@ -1,0 +1,3 @@
+<div class="ui very padded basic segment">
+  <h1>Hello <%= @user.name %></h1>
+</div>
